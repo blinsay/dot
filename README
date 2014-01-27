@@ -1,0 +1,4 @@
+Dotfiles and an install script. Less yak-shaving, more doing.
+
+`install.sh` is destructive, so back up your `.zsh*` and `.vim*` files before
+you run it.
