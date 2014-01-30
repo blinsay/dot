@@ -32,6 +32,26 @@ setup_zsh() {
   fi
 }
 
+update_pathogen_bundles() {
+  echo "\033[0;32mUpdating pathogen bundles...\033[0m"
+  cd ~/.vim/bundle
+  install_packages=`cat $dot_dir/pathogen.install`
+  for repo_url in $install_packages
+  do
+    repo_name=`basename $repo_url .git`
+    if [ -d $repo_name ]
+    then
+      pushd $repo_name > /dev/null
+      git pull origin master
+      popd > /dev/null
+    else
+      git clone $repo_url 
+    fi
+  done
+  cd $dot_dir
+}
+
+
 setup_vim() {
   mkdir -p ~/.vim/autoload ~/.vim/bundle
   if [ ! -d ~/.vim/vim-pathogen ]
@@ -41,60 +61,66 @@ setup_vim() {
   fi
   cp $dot_dir/dot.vimrc ~/.vimrc
 
-  cd ~/.vim/bundle
-  install_packages=`cat $dot_dir/pathogen.install`
-  for repo_url in $install_packages
-  do
-    git clone $repo_url 
-  done
-  cd $dot_dir
+  update_pathogen_bundles
 }
 
+_welcome_to_hell() {
+  echo ''
+  echo ''
+  echo ''
+  echo ''
+  echo '\033[0;35m'
+  echo ' /$$      /$$ /$$$$$$$$ /$$        /$$$$$$   /$$$$$$  /$$      /$$ /$$$$$$$$' 
+  echo '| $$  /$ | $$| $$_____/| $$       /$$__  $$ /$$__  $$| $$$    /$$$| $$_____/'
+  echo '| $$ /$$$| $$| $$      | $$      | $$  \__/| $$  \ $$| $$$$  /$$$$| $$      '
+  echo '| $$/$$ $$ $$| $$$$$   | $$      | $$      | $$  | $$| $$ $$/$$ $$| $$$$$   '
+  echo '| $$$$_  $$$$| $$__/   | $$      | $$      | $$  | $$| $$  $$$| $$| $$__/   '
+  echo '| $$$/ \  $$$| $$      | $$      | $$    $$| $$  | $$| $$\  $ | $$| $$      '
+  echo '| $$/   \  $$| $$$$$$$$| $$$$$$$$|  $$$$$$/|  $$$$$$/| $$ \/  | $$| $$$$$$$$'
+  echo '|__/     \__/|________/|________/ \______/  \______/ |__/     |__/|________/'
+  echo '                                                                            '
+  echo '                                                                            '
+  echo '                                                                            '
+  echo '                           /$$$$$$$$/$$$$$$                                 '
+  echo '                          |__  $$__/$$__  $$                                '
+  echo '                             | $$ | $$  \ $$                                '
+  echo '                             | $$ | $$  | $$                                '
+  echo '                             | $$ | $$  | $$                                '
+  echo '                             | $$ | $$  | $$                                '
+  echo '                             | $$ |  $$$$$$/                                '
+  echo '                             |__/  \______/                                 '
+  echo '                                                                            '
+  echo '                                                                            '
+  echo '                                                                            '
+  echo '                      /$$   /$$ /$$$$$$$$ /$$       /$$                     '
+  echo '                     | $$  | $$| $$_____/| $$      | $$                     '
+  echo '                     | $$  | $$| $$      | $$      | $$                     '
+  echo '                     | $$$$$$$$| $$$$$   | $$      | $$                     '
+  echo '                     | $$__  $$| $$__/   | $$      | $$                     '
+  echo '                     | $$  | $$| $$      | $$      | $$                     '
+  echo '                     | $$  | $$| $$$$$$$$| $$$$$$$$| $$$$$$$$               '
+  echo '                     |__/  |__/|________/|________/|________/               '
+  echo ''
+  echo ''
+  echo ''
+  echo ''
+}
 
-echo "\033[0;32mSetting up ZSH...\033[0m"
-setup_zsh
+case "$1" in
+  install)
+    echo "\033[0;32mSetting up ZSH...\033[0m"
+    setup_zsh
+    echo ""
+    echo "\033[0;32mSetting up Vim...\033[0m"
+    setup_vim
+    _welcome_to_hell
+    /usr/bin/env zsh
+    ;;
+  update)
+    update_pathogen_bundles
+    ;;
+  *)
+    echo "$0 [instal|update]"
+esac
 
-echo ""
-echo "\033[0;32mSetting up Vim...\033[0m"
-setup_vim
 
-echo ''
-echo ''
-echo ''
-echo ''
-echo '\033[0;35m /$$      /$$ /$$$$$$$$ /$$        /$$$$$$   /$$$$$$  /$$      /$$ /$$$$$$$$' 
-echo '\033[0;35m| $$  /$ | $$| $$_____/| $$       /$$__  $$ /$$__  $$| $$$    /$$$| $$_____/'
-echo '\033[0;35m| $$ /$$$| $$| $$      | $$      | $$  \__/| $$  \ $$| $$$$  /$$$$| $$      '
-echo '\033[0;35m| $$/$$ $$ $$| $$$$$   | $$      | $$      | $$  | $$| $$ $$/$$ $$| $$$$$   '
-echo '\033[0;35m| $$$$_  $$$$| $$__/   | $$      | $$      | $$  | $$| $$  $$$| $$| $$__/   '
-echo '\033[0;35m| $$$/ \  $$$| $$      | $$      | $$    $$| $$  | $$| $$\  $ | $$| $$      '
-echo '\033[0;35m| $$/   \  $$| $$$$$$$$| $$$$$$$$|  $$$$$$/|  $$$$$$/| $$ \/  | $$| $$$$$$$$'
-echo '\033[0;35m|__/     \__/|________/|________/ \______/  \______/ |__/     |__/|________/'
-echo '\033[0;35m                                                                            '
-echo '\033[0;35m                                                                            '
-echo '\033[0;35m                                                                            '
-echo '\033[0;35m                           /$$$$$$$$/$$$$$$                                 '
-echo '\033[0;35m                          |__  $$__/$$__  $$                                '
-echo '\033[0;35m                             | $$ | $$  \ $$                                '
-echo '\033[0;35m                             | $$ | $$  | $$                                '
-echo '\033[0;35m                             | $$ | $$  | $$                                '
-echo '\033[0;35m                             | $$ | $$  | $$                                '
-echo '\033[0;35m                             | $$ |  $$$$$$/                                '
-echo '\033[0;35m                             |__/  \______/                                 '
-echo '\033[0;35m                                                                            '
-echo '\033[0;35m                                                                            '
-echo '\033[0;35m                                                                            '
-echo '\033[0;35m                      /$$   /$$ /$$$$$$$$ /$$       /$$                     '
-echo '\033[0;35m                     | $$  | $$| $$_____/| $$      | $$                     '
-echo '\033[0;35m                     | $$  | $$| $$      | $$      | $$                     '
-echo '\033[0;35m                     | $$$$$$$$| $$$$$   | $$      | $$                     '
-echo '\033[0;35m                     | $$__  $$| $$__/   | $$      | $$                     '
-echo '\033[0;35m                     | $$  | $$| $$      | $$      | $$                     '
-echo '\033[0;35m                     | $$  | $$| $$$$$$$$| $$$$$$$$| $$$$$$$$               '
-echo '\033[0;35m                     |__/  |__/|________/|________/|________/               '
-echo ''
-echo ''
-echo ''
-echo ''
-
-/usr/bin/env zsh
