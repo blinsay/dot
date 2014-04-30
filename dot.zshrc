@@ -20,7 +20,7 @@ export JAVA_HOME=$(/usr/libexec/java_home)
 
 alias mcp='mvn clean package'
 alias mct='mvn clean test'
-alias md5sum=md5
+alias md5sum='md5 -r'
 
 # local options
 # 
