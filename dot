@@ -32,6 +32,15 @@ setup_zsh() {
   fi
 }
 
+update_zshrc() {
+  if [ "`md5 -q $dot_dir/dot.zshrc`" != "`md5 -q ~/.zshrc`" ]
+  then
+    echo "\033[0;32mUpdating zshrc...\033[0m"
+    mv ~/.zshrc ~/.zshrc.bak
+    cp $dot_dir/dot.zshrc ~/.zshrc 
+  fi
+}
+
 update_pathogen_bundles() {
   echo "\033[0;32mUpdating pathogen bundles...\033[0m"
   cd ~/.vim/bundle
@@ -149,6 +158,7 @@ case "$1" in
     /usr/bin/env zsh
     ;;
   update)
+    update_zshrc
     update_pathogen_bundles
     _hail_satan
     ;;
