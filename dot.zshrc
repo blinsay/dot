@@ -18,6 +18,7 @@ export EDITOR='vim'
 export PATH=$PATH:~/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/sbin
 export JAVA_HOME=$(/usr/libexec/java_home)
 
+alias ag='ag --pager=less'
 alias mcp='mvn clean package'
 alias mct='mvn clean test'
 alias md5sum='md5 -r'
