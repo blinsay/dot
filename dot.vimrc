@@ -44,6 +44,9 @@ set expandtab
 set tabstop=2 softtabstop=2 shiftwidth=2 ai
 set encoding=utf-8
 
+" Remove all trailing whitespace on write
+autocmd BufWritePre * :%s/\s\+$//e
+
 "find/replace selected text in Visual mode
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 
