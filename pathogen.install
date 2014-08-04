@@ -7,3 +7,4 @@ git@github.com:scrooloose/nerdtree.git
 git@github.com:jnwhiteh/vim-golang.git
 git@github.com:pangloss/vim-javascript.git
 git@github.com:scrooloose/syntastic.git
+git@github.com:rking/ag.vim.git
