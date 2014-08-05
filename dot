@@ -62,6 +62,7 @@ update_pathogen_bundles() {
       git clone $repo_url
     fi
   done
+  vim -c "Helptags | q"
   cd $dot_dir
 }
 
