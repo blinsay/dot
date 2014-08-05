@@ -95,4 +95,7 @@ set showmatch
 nnoremap <leader><space> :noh<cr>
 nnoremap <leader>a :Ag<space>
 
-
+" Fugitive
+nnoremap <leader>gst :Gstatus<cr>
+nnoremap <leader>gd :Gdiff
+nnoremap <leader>g :G

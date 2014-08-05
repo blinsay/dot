@@ -9,3 +9,4 @@ git@github.com:pangloss/vim-javascript.git
 git@github.com:scrooloose/syntastic.git
 git@github.com:rking/ag.vim.git
 git@github.com:wincent/Command-T.git
+git@github.com:tpope/vim-fugitive.git
