@@ -4,7 +4,7 @@ git@github.com:tpope/vim-markdown.git
 git@github.com:vim-scripts/paredit.vim.git
 git@github.com:guns/vim-clojure-static.git
 git@github.com:scrooloose/nerdtree.git
-git@github.com:jnwhiteh/vim-golang.git
+git@github.com:fatih/vim-go.git
 git@github.com:pangloss/vim-javascript.git
 git@github.com:scrooloose/syntastic.git
 git@github.com:rking/ag.vim.git
