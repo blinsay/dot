@@ -99,3 +99,6 @@ nnoremap <leader>a :Ag<space>
 nnoremap <leader>gst :Gstatus<cr>
 nnoremap <leader>gd :Gdiff
 nnoremap <leader>g :G
+
+" Syntastic
+nnoremap <leader>c :SyntasticToggleMode<cr>
