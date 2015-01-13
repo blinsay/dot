@@ -11,3 +11,4 @@ git@github.com:rking/ag.vim.git
 git@github.com:wincent/Command-T.git
 git@github.com:tpope/vim-fugitive.git
 git@github.com:ekalinin/Dockerfile.vim.git
+git@github.com:jcfaria/Vim-R-plugin.git
