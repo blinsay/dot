@@ -169,17 +169,17 @@ case "$1" in
     update_pathogen_bundles
     _hail_satan
     ;;
-  update_vim)
+  update-vim)
     update_pathogen_bundles
     update_vimrc
     _hail_satan
     ;;
-  update_zsh)
+  update-zsh)
     update_zshrc
     _hail_satan
     ;;
   *)
-    echo "$0 [instal|update]"
+    echo "$0 [instal|update|update-zsh|update-vim]"
 esac
 
 
