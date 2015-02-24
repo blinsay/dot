@@ -64,6 +64,9 @@ vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 " PYTHON IS PEP8
 au FileType python setl tabstop=4 shiftwidth=4 softtabstop=4
 
+"RMD neckbeardery
+au BufWritePost *.Rmd !Rscript -e 'library(knitr); knit2html("<afile>")'
+
 " ------------------------------------------------------------------------------
 " Windows and splits
 
@@ -102,3 +105,4 @@ nnoremap <leader>g :G
 
 " Syntastic
 nnoremap <leader>c :SyntasticToggleMode<cr>
+
