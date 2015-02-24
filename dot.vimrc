@@ -65,7 +65,7 @@ vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 au FileType python setl tabstop=4 shiftwidth=4 softtabstop=4
 
 "RMD neckbeardery
-au BufWritePost *.Rmd !Rscript -e 'library(knitr); knit2html("<afile>")'
+nnoremap <leader>rmd :!Rscript -e 'library(knitr); knit2html("%")'
 
 " ------------------------------------------------------------------------------
 " Windows and splits
