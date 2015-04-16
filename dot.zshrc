@@ -22,6 +22,7 @@ alias ag='ag --pager=less'
 alias mcp='mvn clean package'
 alias mct='mvn clean test'
 alias md5sum='md5 -r'
+alias sum="awk '{ sum+=\$1} END {print sum}'"
 
 # local options
 # 
