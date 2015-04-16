@@ -106,3 +106,5 @@ nnoremap <leader>g :G
 " Syntastic
 nnoremap <leader>c :SyntasticToggleMode<cr>
 
+" NERDTree
+nnoremap <leader>n :NERDTree<cr>
