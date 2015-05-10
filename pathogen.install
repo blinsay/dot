@@ -8,7 +8,7 @@ git@github.com:fatih/vim-go.git
 git@github.com:pangloss/vim-javascript.git
 git@github.com:scrooloose/syntastic.git
 git@github.com:rking/ag.vim.git
-git@github.com:wincent/Command-T.git
 git@github.com:tpope/vim-fugitive.git
 git@github.com:ekalinin/Dockerfile.vim.git
 git@github.com:jcfaria/Vim-R-plugin.git
+git@github.com:rust-lang/rust.vim.git

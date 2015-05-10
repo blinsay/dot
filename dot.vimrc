@@ -101,10 +101,15 @@ nnoremap <leader>a :Ag<space>
 " Fugitive
 nnoremap <leader>gst :Gstatus<cr>
 nnoremap <leader>gd :Gdiff
-nnoremap <leader>g :G
 
 " Syntastic
 nnoremap <leader>c :SyntasticToggleMode<cr>
 
 " NERDTree
 nnoremap <leader>n :NERDTree<cr>
+
+" Go
+let g:go_fmt_command = "goimports"
+au FileType go nnoremap <leader>d <Plug>(go-def)
+au FileType go nnoremap <leader>j <Plug>(go-doc)
+au FileType go nnoremap <leader>t <Plug>(go-test)
