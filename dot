@@ -5,8 +5,7 @@ set -e
 
 dot_dir=`pwd`
 
-# The url for the git repository to clone oh-my-zsh from. Usually the offical
-# oh-my-zsh repo or your own personal fork.
+# The url for the git repository to clone oh-my-zsh from.
 omz='git@github.com:blinsay/oh-my-zsh.git'
 
 setup_zsh() {
@@ -66,7 +65,6 @@ update_pathogen_bundles() {
   cd $dot_dir
 }
 
-
 setup_vim() {
   mkdir -p ~/.vim/autoload ~/.vim/bundle
   if [ ! -d ~/.vim/vim-pathogen ]
@@ -77,6 +75,12 @@ setup_vim() {
 
   update_vimrc
   update_pathogen_bundles
+}
+
+update_gitconfig() {
+  echo "\033[0;32mUpdating global gitconfig...\033[0m"
+  cp $dot_dir/gitignore_global ~/.gitignore_global
+  git config --global core.excludesfile ~/.gitignore_global
 }
 
 _welcome_to_hell() {
@@ -167,19 +171,23 @@ case "$1" in
     update_zshrc
     update_vimrc
     update_pathogen_bundles
-    _hail_satan
     ;;
   update-vim)
-    update_pathogen_bundles
     update_vimrc
-    _hail_satan
+    ;;
+  update-pathogen)
+    update_pathogen_bundles
     ;;
   update-zsh)
     update_zshrc
-    _hail_satan
+    ;;
+  update-git)
+    update_gitconfig
     ;;
   *)
     echo "$0 [instal|update|update-zsh|update-vim]"
 esac
+
+_hail_satan
 
 
