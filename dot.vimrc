@@ -85,6 +85,12 @@ noremap <leader>w <C-w>v<C-w>l
 " Quick esc
 inoremap jj <ESC>
 
+" System clipboard
+nnoremap <leader>y "*y
+vnoremap <leader>y "*y
+nnoremap <leader>p "*p
+vnoremap <leader>p "*p
+
 " Format text
 nnoremap <leader>q gqip
 noremap gq <leader>q
@@ -103,7 +109,7 @@ nnoremap <leader>gst :Gstatus<cr>
 nnoremap <leader>gd :Gdiff
 
 " Syntastic
-nnoremap <leader>c :SyntasticToggleMode<cr>
+nnoremap <leader>C :SyntasticToggleMode<cr>
 
 " NERDTree
 nnoremap <leader>n :NERDTree<cr>
