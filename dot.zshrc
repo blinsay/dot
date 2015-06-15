@@ -1,5 +1,5 @@
 # oh-my-zsh options
-# 
+#
 # ZSH:                      path to the oh-my-zsh directory
 # ZSH_THEME:                name of the theme to use
 # DISABLE_AUTO_UPDATE:      don't auto-update
@@ -9,7 +9,7 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="geoffgarside"
 DISABLE_AUTO_UPDATE="true"
 COMPLETION_WAITING_DOTS="true"
-plugins=(git brew python lein mvn postgres osx virtualenv virtualenvwrapper)
+plugins=(git brew lein postgres osx rbenv)
 source $ZSH/oh-my-zsh.sh
 
 # vanilla ZSH options
@@ -22,10 +22,12 @@ alias ag='ag --pager=less'
 alias mcp='mvn clean package'
 alias mct='mvn clean test'
 alias md5sum='md5 -r'
+alias be='bundle exec'
+
 alias sum="awk '{ sum+=\$1} END {print sum}'"
 
 # local options
-# 
+#
 if [[ -a ~/.localrc ]]
 then
   source ~/.localrc
