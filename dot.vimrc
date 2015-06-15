@@ -60,13 +60,6 @@ autocmd BufWritePre * :%s/\s\+$//e
 
 "find/replace selected text in Visual mode
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
-
-" PYTHON IS PEP8
-au FileType python setl tabstop=4 shiftwidth=4 softtabstop=4
-
-"RMD neckbeardery
-nnoremap <leader>rmd :!Rscript -e 'library(knitr); knit2html("%")'
-
 " ------------------------------------------------------------------------------
 " Windows and splits
 
@@ -119,3 +112,11 @@ let g:go_fmt_command = "goimports"
 au FileType go nnoremap <leader>d <Plug>(go-def)
 au FileType go nnoremap <leader>j <Plug>(go-doc)
 au FileType go nnoremap <leader>t <Plug>(go-test)
+
+" Pythong
+au FileType python setl tabstop=4 shiftwidth=4 softtabstop=4
+
+"RMD neckbeardery
+nnoremap <leader>rmd :!Rscript -e 'library(knitr); knit2html("%")'
+
+
