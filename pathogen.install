@@ -1,14 +1,30 @@
+# Basics
 git://github.com/tpope/vim-sensible.git
 git://github.com/altercation/vim-colors-solarized.git
-git@github.com:tpope/vim-markdown.git
-git@github.com:vim-scripts/paredit.vim.git
-git@github.com:guns/vim-clojure-static.git
 git@github.com:scrooloose/nerdtree.git
-git@github.com:fatih/vim-go.git
-git@github.com:pangloss/vim-javascript.git
 git@github.com:scrooloose/syntastic.git
 git@github.com:rking/ag.vim.git
 git@github.com:tpope/vim-fugitive.git
+
+# Clojure
+git@github.com:vim-scripts/paredit.vim.git
+git@github.com:guns/vim-clojure-static.git
+git@github.com:kien/rainbow_parentheses.vim.git
+
+# Dockerfiles
 git@github.com:ekalinin/Dockerfile.vim.git
+
+# Go
+git@github.com:fatih/vim-go.git
+
+# JS
+git@github.com:pangloss/vim-javascript.git
+
+# Markdown
+git@github.com:tpope/vim-markdown.git
+
+# R
 git@github.com:jcfaria/Vim-R-plugin.git
+
+# Rust
 git@github.com:rust-lang/rust.vim.git
