@@ -185,7 +185,7 @@ case "$1" in
     update_gitconfig
     ;;
   *)
-    echo "$0 [instal|update|update-zsh|update-vim]"
+    echo "$0 [instal|update|update-zsh|update-vim|update-pathogen]"
 esac
 
 _hail_satan
