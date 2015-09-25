@@ -48,7 +48,7 @@ update_vimrc() {
 update_pathogen_bundles() {
   echo "\033[0;32mUpdating pathogen bundles...\033[0m"
   cd ~/.vim/bundle
-  install_packages=`cat $dot_dir/pathogen.install`
+  install_packages=$(perl -ne 'print unless /^$|^\s*#/' $dot_dir/pathogen.install)
   for repo_url in $install_packages
   do
     repo_name=`basename $repo_url .git`
