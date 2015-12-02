@@ -116,6 +116,9 @@ au FileType go nnoremap <leader>t <Plug>(go-test)
 " Pythong
 au FileType python setl tabstop=4 shiftwidth=4 softtabstop=4
 
+" Ruby
+let g:syntastic_ruby_mri_exec='/usr/local/opt/rbenv/shims/ruby'
+
 "RMD neckbeardery
 nnoremap <leader>rmd :!Rscript -e 'library(knitr); knit2html("%")'
 
