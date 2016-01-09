@@ -104,6 +104,9 @@ nnoremap <leader>gd :Gdiff
 " Syntastic
 nnoremap <leader>C :SyntasticToggleMode<cr>
 
+" Clojure
+au FileType clojure nnoremap <leader>r :Require<cr>
+
 " NERDTree
 nnoremap <leader>n :NERDTree<cr>
 
