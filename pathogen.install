@@ -6,6 +6,8 @@ git@github.com:scrooloose/syntastic.git
 git@github.com:rking/ag.vim.git
 git@github.com:tpope/vim-fugitive.git
 
+git@github.com:ctrlpvim/ctrlp.vim.git
+
 # Clojure
 git@github.com:vim-scripts/paredit.vim.git
 git@github.com:guns/vim-clojure-static.git
