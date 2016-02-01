@@ -78,6 +78,8 @@ noremap <leader>w <C-w>v<C-w>l
 " Quick esc
 inoremap jj <ESC>
 
+
+
 " System clipboard
 nnoremap <leader>y "*y
 vnoremap <leader>y "*y
@@ -96,6 +98,9 @@ set gdefault
 set showmatch
 nnoremap <leader><space> :noh<cr>
 nnoremap <leader>a :Ag<space>
+
+" ctrlp
+let g:ctrlp_map = '<leader>f'
 
 " Fugitive
 nnoremap <leader>gst :Gstatus<cr>
