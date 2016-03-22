@@ -9,7 +9,7 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="geoffgarside"
 DISABLE_AUTO_UPDATE="true"
 COMPLETION_WAITING_DOTS="true"
-plugins=(git brew lein osx)
+plugins=(git brew lein osx aws docker history mvn)
 source $ZSH/oh-my-zsh.sh
 
 # vanilla ZSH options
