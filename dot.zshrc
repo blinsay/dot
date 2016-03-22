@@ -9,7 +9,7 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="geoffgarside"
 DISABLE_AUTO_UPDATE="true"
 COMPLETION_WAITING_DOTS="true"
-plugins=(git brew lein postgres osx rbenv)
+plugins=(git brew lein postgres osx)
 source $ZSH/oh-my-zsh.sh
 
 # vanilla ZSH options
