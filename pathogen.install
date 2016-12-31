@@ -36,3 +36,6 @@ git@github.com:jcfaria/Vim-R-plugin.git
 # Rust
 git@github.com:rust-lang/rust.vim.git
 git@github.com:racer-rust/vim-racer.git
+
+# Terraform
+git@github.com:hashivim/vim-terraform.git
