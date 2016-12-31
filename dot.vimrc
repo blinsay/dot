@@ -118,9 +118,10 @@ nnoremap <leader>n :NERDTree<cr>
 
 " Go
 let g:go_fmt_command = "goimports"
-au FileType go nnoremap <leader>d <Plug>(go-def)
-au FileType go nnoremap <leader>j <Plug>(go-doc)
-au FileType go nnoremap <leader>t <Plug>(go-test)
+au FileType go nmap <leader>d <Plug>(go-def)
+au FileType go nmap <leader>sd <Plug>(go-def-split)
+au FileType go nmap <leader>vd <Plug>(go-def-vertical)
+au FileType go nmap <leader>j <Plug>(go-doc)
 
 " Pythong
 au FileType python setl tabstop=4 shiftwidth=4 softtabstop=4
