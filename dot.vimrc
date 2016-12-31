@@ -108,6 +108,7 @@ nnoremap <leader>gd :Gdiff
 
 " Syntastic
 nnoremap <leader>C :SyntasticToggleMode<cr>
+let g:syntastic_go_checkers = ['go', 'gofmt', 'govet']
 
 " Clojure
 au FileType clojure nnoremap <leader>r :Require<cr>
