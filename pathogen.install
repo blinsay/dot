@@ -21,6 +21,12 @@ git@github.com:venantius/vim-cljfmt.git
 # Dockerfiles
 git@github.com:ekalinin/Dockerfile.vim.git
 
+# Elm
+git@github.com:ElmCast/elm-vim.git
+
+#Graphql
+git@github.com:jparise/vim-graphql.git
+
 # Go
 git@github.com:fatih/vim-go.git
 

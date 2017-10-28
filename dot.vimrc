@@ -127,6 +127,9 @@ au FileType go nmap <leader>sd <Plug>(go-def-split)
 au FileType go nmap <leader>vd <Plug>(go-def-vertical)
 au FileType go nmap <leader>j <Plug>(go-doc)
 
+" Elm
+let g:elm_format_autosave = 1
+
 " Pythong
 au FileType python setl tabstop=4 shiftwidth=4 softtabstop=4
 
