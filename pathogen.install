@@ -36,6 +36,9 @@ git@github.com:pangloss/vim-javascript.git
 # Markdown
 git@github.com:tpope/vim-markdown.git
 
+# OpenGL
+git@github.com:tikhomirov/vim-glsl.git
+
 # R
 git@github.com:jcfaria/Vim-R-plugin.git
 
