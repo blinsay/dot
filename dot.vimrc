@@ -139,4 +139,7 @@ let g:syntastic_ruby_mri_exec='/usr/local/opt/rbenv/shims/ruby'
 "RMD neckbeardery
 nnoremap <leader>rmd :!Rscript -e 'library(knitr); knit2html("%")'
 
-
+" Typescript
+let g:tsuquyomi_disable_default_mappings = 1
+let g:tsuquyomi_completion_detail = 1
+au FileType typescript nmap <leader>d <Plug>(TsuquyomiDefinition)

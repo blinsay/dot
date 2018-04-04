@@ -48,3 +48,7 @@ git@github.com:racer-rust/vim-racer.git
 
 # Terraform
 git@github.com:hashivim/vim-terraform.git
+
+# Typescript
+git@github.com:leafgarland/typescript-vim.git
+git@github.com:Quramy/tsuquyomi.git
