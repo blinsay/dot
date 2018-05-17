@@ -17,7 +17,7 @@ set scrolloff=10
 " UI
 set wildmenu
 
-" Leader Shenanigans
+" Leader
 let mapleader = ","
 
 " Disable Arrow Keys
@@ -78,8 +78,6 @@ noremap <leader>w <C-w>v<C-w>l
 " Quick esc
 inoremap jj <ESC>
 
-
-
 " System clipboard
 nnoremap <leader>y "*y
 vnoremap <leader>y "*y
@@ -99,26 +97,23 @@ set showmatch
 nnoremap <leader><space> :noh<cr>
 nnoremap <leader>a :Ag<space>
 
-" ctrlp
-let g:ctrlp_map = '<leader>f'
-
-" Fugitive
-nnoremap <leader>gst :Gstatus<cr>
-nnoremap <leader>gd :Gdiff
-
-" Syntastic
-nnoremap <leader>C :SyntasticToggleMode<cr>
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_go_checkers = ['go', 'gofmt', 'govet']
+" ALE
+let g:ale_linters = {
+\   'go': ['go build', 'gofmt', 'govet'],
+\}
+let g:ale_pattern_options = {
+\ '\.min\.js$': {'ale_linters': [], 'ale_fixers': []},
+\ '\.min\.css$': {'ale_linters': [], 'ale_fixers': []},
+\}
+nmap <leader><F2> <Plug>(ale_next_wrap)
+nmap <leader><F3> <Plug>(ale_detail)
 
 " Clojure
 au FileType clojure nnoremap <leader>r :Require<cr>
 
-" NERDTree
-nnoremap <leader>n :NERDTree<cr>
+" Fugitive
+nnoremap <leader>gst :Gstatus<cr>
+nnoremap <leader>gd :Gdiff
 
 " Go
 let g:go_fmt_command = "goimports"
@@ -138,6 +133,11 @@ let g:syntastic_ruby_mri_exec='/usr/local/opt/rbenv/shims/ruby'
 
 "RMD neckbeardery
 nnoremap <leader>rmd :!Rscript -e 'library(knitr); knit2html("%")'
+
+" Rust
+let g:racer_experimental_completer = 1
+au FileType rust nmap <leader>d <Plug>(rust-def)
+au FileType rust nmap <leader>j <Plug>(rust-doc)
 
 " Typescript
 let g:tsuquyomi_disable_default_mappings = 1
