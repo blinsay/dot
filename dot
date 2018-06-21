@@ -40,43 +40,6 @@ update_zshrc() {
   fi
 }
 
-update_vimrc() {
-  echo "\033[0;32mUpdating vimrc...\033[0m"
-  cp $dot_dir/dot.vimrc ~/.vimrc
-}
-
-update_pathogen_bundles() {
-  echo "\033[0;32mUpdating pathogen bundles...\033[0m"
-  cd ~/.vim/bundle
-  install_packages=$(perl -ne 'print unless /^$|^\s*#/' $dot_dir/pathogen.install)
-  for repo_url in $install_packages
-  do
-    repo_name=`basename $repo_url .git`
-    if [ -d $repo_name ]
-    then
-      pushd $repo_name > /dev/null
-      git pull origin master
-      popd > /dev/null
-    else
-      git clone $repo_url
-    fi
-  done
-  vim -c "Helptags | q"
-  cd $dot_dir
-}
-
-setup_vim() {
-  mkdir -p ~/.vim/autoload ~/.vim/bundle
-  if [ ! -d ~/.vim/vim-pathogen ]
-  then
-    git clone git@github.com:tpope/vim-pathogen.git ~/.vim/vim-pathogen
-    ln -s ~/.vim/vim-pathogen/autoload/pathogen.vim ~/.vim/autoload/
-  fi
-
-  update_vimrc
-  update_pathogen_bundles
-}
-
 update_gitconfig() {
   echo "\033[0;32mUpdating global gitconfig...\033[0m"
   cp $dot_dir/gitignore_global ~/.gitignore_global
@@ -161,31 +124,15 @@ case "$1" in
   install)
     echo "\033[0;32mSetting up ZSH...\033[0m"
     setup_zsh
-    echo ""
-    echo "\033[0;32mSetting up Vim...\033[0m"
-    setup_vim
     _welcome_to_hell
     /usr/bin/env zsh
     ;;
   update)
     update_zshrc
-    update_vimrc
-    update_pathogen_bundles
-    ;;
-  update-vim)
-    update_vimrc
-    ;;
-  update-pathogen)
-    update_pathogen_bundles
-    ;;
-  update-zsh)
-    update_zshrc
-    ;;
-  update-git)
     update_gitconfig
     ;;
   *)
-    echo "$0 [instal|update|update-zsh|update-vim|update-pathogen]"
+    echo "$0 [instal|update]"
 esac
 
 _hail_satan
