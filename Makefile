@@ -1,7 +1,11 @@
 .PHONY: all
-all: gitconfig tmux garf
+all: zshrc gitconfig tmux garf
 
 # TODO(benl): zshrc
+.PHONY: zshrc
+zshrc:
+	@echo "+ $@"
+	ln -fs $(CURDIR)/.zshrc $(HOME)/.zshrc
 
 .PHONY: tmux
 tmux:
