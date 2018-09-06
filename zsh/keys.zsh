@@ -15,11 +15,24 @@ if (( ${+terminfo[smkx]} )) && (( ${+terminfo[rmkx]} )); then
   zle -N zle-line-finish
 fi
 
+
 # use emacs keybindings for line editing
 bindkey -e
 
 # bind ctrl-r to bash-style reverse history search
 bindkey '^r' history-incremental-search-backward
+
+# rebind tab to expand completion but show waiting dots first
+expand-or-complete-with-dots() {
+  [[ -n "$terminfo[rmam]" && -n "$terminfo[smam]" ]] && echoti rmam
+  print -Pn "%{%F{red}......%f%}"
+  [[ -n "$terminfo[rmam]" && -n "$terminfo[smam]" ]] && echoti smam
+
+  zle expand-or-complete
+  zle redisplay
+}
+zle -N expand-or-complete-with-dots
+bindkey '^I' expand-or-complete-with-dots
 
 # up/down arrows are fuzzy find in history
 if [[ "${terminfo[kcuu1]}" != "" ]]; then
@@ -36,8 +49,9 @@ fi
 
 # shift-tab cycles backwards through tab complete menus
 if [[ "${terminfo[kcbt]}" != "" ]]; then
-  bindkey "${terminfo[kcbt]}" reverse-menu-complete   # [Shift-Tab] - move through the completion menu backwards
+  bindkey "${terminfo[kcbt]}" reverse-menu-complete
 fi
+
 
 # backspace/delete delete things backwards/forwards
 bindkey '^?' backward-delete-char

@@ -1,7 +1,11 @@
 export PATH=~/bin:$PATH
 export EDITOR='vim'
 
+# TODO(benl): this always uses ~/.zcompdump as the compdump file. omz sets this
+# based on the current hostname and zsh version, which is maybe a good idea
+# but also maybe overkill
 autoload -U compaudit compinit
+compinit
 
 for src_file (~/dot/zsh/*.zsh); do
   src_file_path=~/dot/zsh/${src_file:t}
