@@ -7,6 +7,7 @@
 # Some good aliases
 alias ga='git add'
 alias gc='git commit -v'
+alias gd='git diff'
 alias gst='git status'
 alias gco='git checkout'
 alias glgg='git log --graph'
