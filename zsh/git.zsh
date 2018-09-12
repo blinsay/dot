@@ -53,9 +53,9 @@ function _parse_git_dirty() {
   STATUS=$(command git status ${FLAGS} 2> /dev/null | tail -n1)
 
   if [[ -n $STATUS ]]; then
-    echo "$ZSH_THEME_GIT_PROMPT_DIRTY"
+    echo "$GIT_PROMPT_DIRTY"
   else
-    echo "$ZSH_THEME_GIT_PROMPT_CLEAN"
+    echo "$GIT_PROMPT_CLEAN"
   fi
 }
 
@@ -64,6 +64,6 @@ function git_prompt_info() {
 
   ref=$(command git symbolic-ref HEAD 2> /dev/null) || \
   ref=$(command git rev-parse --short HEAD 2> /dev/null) || return 0
-  echo "$ZSH_THEME_GIT_PROMPT_PREFIX${ref#refs/heads/}$(_parse_git_dirty)$ZSH_THEME_GIT_PROMPT_SUFFIX"
+  echo "$GIT_PROMPT_PREFIX${ref#refs/heads/}$(_parse_git_dirty)$GIT_PROMPT_SUFFIX"
 }
 
