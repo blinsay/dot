@@ -18,8 +18,3 @@ if [[ -x /usr/libexec/java_home ]]; then
   export JAVA_HOME=$(/usr/libexec/java_home)
 fi
 
-# local things that shouldn't be standard everywhere
-if [[ -a ~/.localrc ]]; then
-  source ~/.localrc
-fi
-
