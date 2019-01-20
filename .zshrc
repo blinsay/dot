@@ -14,7 +14,7 @@ done
 unset src_file_path
 
 # set JAVA_HOME to the latest JVM version on OSX
-if /usr/libexec/java_home 2> /dev/null; then
+if /usr/libexec/java_home &> /dev/null; then
   export JAVA_HOME=$(/usr/libexec/java_home)
 fi
 
