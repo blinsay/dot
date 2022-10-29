@@ -7,6 +7,10 @@ zshrc:
 	@echo "+ $@"
 	ln -fs $(CURDIR)/.zshrc $(HOME)/.zshrc
 
+solarized.itermcolors:
+	@echo "+ $@"
+	curl -o solarized.itermcolors https://raw.githubusercontent.com/altercation/solarized/master/iterm2-colors-solarized/Solarized%20Dark.itermcolors
+
 .PHONY: tmux
 tmux:
 	@echo "+ $@"
