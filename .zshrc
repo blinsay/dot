@@ -32,3 +32,4 @@ unset src_file_path
 if /usr/libexec/java_home &> /dev/null; then
   export JAVA_HOME=$(/usr/libexec/java_home)
 fi
+

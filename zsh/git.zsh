@@ -14,6 +14,10 @@ alias glgg='git log --graph'
 alias glog='git log --oneline --decorate --graph'
 alias gloga='git log --oneline --decorate --graph --all'
 
+# Add a git alias to print the root of the current git repository. Silently
+# exits non-zero outside of a git repo.
+git config --global alias.root "!sh -c 'git rev-parse --show-toplevel 2>/dev/null'"
+
 # Compares the provided version of git to the version installed and on path
 # Outputs -1, 0, or 1 if the installed version is less than, equal to, or
 # greater than the input version, respectively.

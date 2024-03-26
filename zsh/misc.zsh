@@ -28,6 +28,13 @@ alias -g ....='../../..'
 alias -g .....='../../../..'
 alias -g ......='../../../../..'
 
+# mkcdir
+#
+# it's the mkdir && cd alias that should have always been here
+function mkcdir {
+  mkdir -p "$1" && cd "$1"
+}
+
 # grep
 #
 # exclude VCS folders and turn on color
@@ -59,6 +66,7 @@ setopt long_list_jobs
 # pager
 export PAGER="less"
 export LESS="-R"
+export BAT_THEME="Solarized (light)"
 
 # recognize comments
 setopt interactivecomments
