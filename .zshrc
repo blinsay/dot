@@ -33,3 +33,8 @@ if /usr/libexec/java_home &> /dev/null; then
   export JAVA_HOME=$(/usr/libexec/java_home)
 fi
 
+# atuin setup. for some reason this can't be done in another file being
+# sourced. shruggie.
+. "$HOME/.atuin/bin/env"
+eval "$(atuin init zsh --disable-up-arrow)"
+
