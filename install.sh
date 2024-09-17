@@ -11,6 +11,11 @@ zshrc() {
     ln -fs "${PWD}"/.zshrc "${HOME}/.zshrc"
 }
 
+fish () {
+  mkdir -p "${HOME}/.config/fish"
+  ln -fs "${PWD}/config.fish" "${HOME}/.config/fish/config.fish"
+}
+
 tmux_conf() {
 	ln -fs "${PWD}"/.tmux.conf "${HOME}"/.tmux.conf
 	ln -fs "${PWD}"/.theme.tmux.conf "${HOME}"/.theme.tmux.conf
@@ -24,6 +29,7 @@ gitconfig() {
 zshrc
 tmux_conf
 gitconfig
+fish
 
 set +x
 echo -e "\033[0;35m"
