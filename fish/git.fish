@@ -12,6 +12,5 @@ if status is-interactive
   # Add a git alias to print the root of the current git repository. Silently
   # exits non-zero outside of a git repo.
   git config --global alias.root "!sh -c 'git rev-parse --show-toplevel 2>/dev/null'"
-
 end
 
