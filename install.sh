@@ -26,10 +26,16 @@ gitconfig() {
     git config --global core.excludesfile ~/.gitignore
 }
 
+ghostty() {
+  mkdir -p "${HOME}/.config/ghostty"
+  ln -sh "${PWD}/ghostty-config" "${HOME}/.config/ghostty/config"
+}
+
 zshrc
 tmux_conf
 gitconfig
 fish
+ghostty
 
 set +x
 echo -e "\033[0;35m"

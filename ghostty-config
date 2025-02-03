@@ -1,0 +1,12 @@
+macos-titlebar-style = transparent
+font-size = 15
+font-family = "Monaco"
+font-style-bold = false
+font-style-italic = false
+font-style-bold-italic = false
+keybind = ctrl+h=goto_split:left
+keybind = ctrl+j=goto_split:bottom
+keybind = ctrl+k=goto_split:top
+keybind = ctrl+l=goto_split:right
+keybind = super+enter=new_split:down
+keybind = super+shift+enter=new_split:right
