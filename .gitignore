@@ -9,3 +9,5 @@
 .Trash-*
 zsh/local/
 .vscode/
+mise.toml
+example.py
