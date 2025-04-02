@@ -14,6 +14,16 @@ zshrc() {
 fish () {
   mkdir -p "${HOME}/.config/fish"
   ln -fs "${PWD}/config.fish" "${HOME}/.config/fish/config.fish"
+
+  mkdir -p "${HOME}/.config/fish/conf.d"
+  for file in $(ls fish/conf.d); do
+    ln -fs "${PWD}/fish/conf.d/${file}" "${HOME}/.config/fish/conf.d/${file}"
+  done
+
+  mkdir -p "${HOME}/.config/fish/functions"
+  for file in $(ls fish/functions); do
+    ln -fs "${PWD}/fish/functions/${file}" "${HOME}/.config/fish/functions/${file}"
+  done
 }
 
 tmux_conf() {
@@ -28,7 +38,7 @@ gitconfig() {
 
 ghostty() {
   mkdir -p "${HOME}/.config/ghostty"
-  ln -sh "${PWD}/ghostty-config" "${HOME}/.config/ghostty/config"
+  ln -fs "${PWD}/ghostty-config" "${HOME}/.config/ghostty/config"
 }
 
 zshrc
