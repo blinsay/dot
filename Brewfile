@@ -22,3 +22,4 @@ brew "mise"
 brew "postgresql@17", restart_service: :changed, link: true
 brew "sqlfluff"
 brew "sqlx-cli"
+brew "zola"
