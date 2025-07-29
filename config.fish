@@ -16,9 +16,10 @@ export EDITOR=hx
 source ~/.orbstack/shell/init.fish 2>/dev/null || :
 
 if command -q batcat
+    export MANPAGER="batcat -l man -p"
     alias bat batcat
 end
 
-if type -q bat
+if command -q bat
     export MANPAGER="bat -l man -p"
 end
